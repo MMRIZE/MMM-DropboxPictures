@@ -14,9 +14,9 @@ MagicMirror module for presenting Pictures from Dropbox (Successor of MMM-Dropbo
 - Remove 3rd-party dependencies as many as possible.
 
 
-
-## Screenshot
-![Not yet prepared]()
+## DEMO
+[![MMM-DropboxPictures Example](https://img.youtube.com/vi/M7-IKi9dtKI/maxresdefault.jpg) 
+Click To Play](https://www.youtube.com/watch?v=M7-IKi9dtKI)
 
 ## Features and Information
 This module will download images (one-by-one) from Dropbox and use it as a fullscreen wallpaper.
