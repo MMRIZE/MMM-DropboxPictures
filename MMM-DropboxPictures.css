@@ -1,0 +1,146 @@
+.DBXP {
+  --width: 100%;
+  --height: 100%;
+
+  width: var(--width);
+  height: var(--height);
+  overflow: hidden;
+  position: relative;
+}
+
+.region.fullscreen .DBXP {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.DBXP .container {
+  width: var(--width);
+  height: var(--height);
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.DBXP .container.fillBackground::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--width);
+  height: var(--height);
+  background-image: var(--backgroundImage);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+}
+
+.DBXP .container.fillBackground.exit::before {
+  animation: bg-exit 2.5s ease-in-out forwards;
+}
+
+.DBXP .container.fillBackground.enter::before {
+  animation: bg-enter 2.5s ease-in-out forwards;
+}
+
+.DBXP .info {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(0 0 0 / 50%);
+  color: white;
+  font-size: 16px;
+  line-height: 110%;
+  text-align: right;
+  opacity: 0;
+  animation: info 2.5s ease-in-out 5s forwards;
+}
+
+.region.fullscreen .DBXP .info {
+  bottom: 50px;
+  right: 50px;
+}
+
+.DBXP .picture {
+  width: var(--width);
+  height: var(--height);
+  object-fit: var(--object-fit);
+  background-color: transparent;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.DBXP .picture.enter {
+  opacity: 1;
+  animation: ani-enter 5s ease-in-out forwards;
+}
+
+.DBXP .picture.exit {
+  opacity: 0;
+  animation: ani-exit 5s ease-in-out forwards;
+}
+
+@keyframes info {
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bg-enter {
+  from {
+    opacity: 0;
+    filter: grayscale(100%) brightness(30%) blur(50px);
+  }
+
+  to {
+    opacity: 1;
+    filter: grayscale(50%) brightness(25%) blur(20px);
+  }
+}
+
+@keyframes bg-exit {
+  from {
+    opacity: 1;
+    filter: grayscale(50%) brightness(25%) blur(20px);
+  }
+
+  to {
+    filter: grayscale(100%) brightness(30%) blur(50px);
+    opacity: 0;
+  }
+}
+
+@keyframes ani-enter {
+  from {
+    transform: rotate(-10deg) scale(2);
+    filter: grayscale(100%);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ani-exit {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    transform: rotate(10deg) scale(2);
+    filter: grayscale(100%);
+    opacity: 0;
+  }
+}
