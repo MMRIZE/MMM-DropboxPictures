@@ -62,7 +62,7 @@ npm install
 2. Fill the `DROPBOX_APP_KEY=` and `DROPBOX_APP_SECRET=` properties, then save.
 3. now, execute `auth.js`
 ```sh
-cd ~/MagicMirror/modules/MMM-DropboxWallpaper
+cd ~/MagicMirror/modules/MMM-DropboxPictures
 node auth.js
 ```
 4. It will instruct you to open a browser and navigate to `http://localhost:3000/auth`. Follow that. You may be requested to confirm auth for this module.
