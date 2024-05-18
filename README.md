@@ -30,15 +30,15 @@ This module will download images (one-by-one) from Dropbox and use it as a fulls
 - share the photos with others, and want to manage showing their photos on `MM` easily.
 
 ### Not so good for who...
-- has a just a few images. (It would be better to save them into your PI and serve them directly.) 
+- has a just a few images. (It would be better to save them into your PI and serve them directly.)
 - wants to work in offline. (Dropbox needs internet connection)
 
 
 ## Installation
 ```sh
 cd ~/MagicMirror/modules
-git clone https://github.com/mong-ni/MMM-DropboxWallpaper.git
-cd MMM-DropboxWallpaper
+git clone https://github.com/MMRIZE/MMM-DropboxPictures
+cd MMM-DropboxPictures
 npm install
 ```
 
@@ -48,7 +48,7 @@ npm install
 2. `Create app` or choose an existing one(See 3.).
   - Choose An API - `Scoped access`
   - Choose the type of access you need - `Full Dropbox` or `App folder` (Anything is OK, but if you want to access pictures already existing, select `Full Dropbox`)
-  - Name your app 
+  - Name your app
   - Then confirm the `Create App` button.
 3. In the `Settings` of the app configuration (After app creation or select an existing one)
   - Add **`http://localhost:3000/auth`** into `OAuth2/Redirect URIs` field.
@@ -60,7 +60,7 @@ npm install
 ### 2. Authentification
 1. Open the `.env` file in this module directory after installation. The `.env` file might be created automatically, but if you cannot find it, just make one by copying `example.env`.
 2. Fill the `DROPBOX_APP_KEY=` and `DROPBOX_APP_SECRET=` properties, then save.
-3. now, execute `auth.js` 
+3. now, execute `auth.js`
 ```sh
 cd ~/MagicMirror/modules/MMM-DropboxWallpaper
 node auth.js
@@ -87,7 +87,7 @@ LOCATIONIQ_TOKEN=0ba...456
 ### Simplest
 ```js
 {
-  module: 'MMM-DropboxWallpaper',
+  module: 'MMM-DropboxPictures',
   position: 'fullscreen_below',
 },
 ```
@@ -98,7 +98,7 @@ LOCATIONIQ_TOKEN=0ba...456
 ```js
 // For specific region.
 {
-  module: 'MMM-DropboxWallpaper',
+  module: 'MMM-DropboxPictures',
   position: 'top_left', // `fullscreen_below` is more usual.
   //header: "DROPBOX",
   config: {
@@ -107,7 +107,7 @@ LOCATIONIQ_TOKEN=0ba...456
     directory: "/Photos",
     fileNames: [ "DSC", /^IMG/ ],
     width: "400px", // For fullscreen, "100%" would be fit.
-    height: "400px", 
+    height: "400px",
     ...
   }
 },
@@ -117,12 +117,12 @@ LOCATIONIQ_TOKEN=0ba...456
 #### verbose : `false`
 This module will be very talkative in the log if set as `true`.
 #### width : `"100%"`
-The width of the module. e.g. `"300px"` 
+The width of the module. e.g. `"300px"`
 - For the fullscreen, `"100%"` or `"100vw"` would be recommended.
 #### height : `"100%"`
 The height of the module. e.g. `"50dvh"`
 - For the fullscreen, `"100%"` or `"100vh"` would be recommended.
-#### autostart : `true` 
+#### autostart : `true`
 Whether this module will start to display images after scanning.
 #### imageLife : `600_000`
 (ms) period of the displaying one picture. The default will be 10 minutes (600,000 ms). The minimum value is `10_000` (10s).
@@ -176,7 +176,7 @@ It will try to fill the empty area of `contain` with the picture.
 > In case of `mode:cover`, this option is meaningless. Set it `false`
 > In some low-powered device, this option may give some burden to the system. In case, set it `false` also.
 #### rescanLoop: `true`
-Whether it restarts after the last image displayed. 
+Whether it restarts after the last image displayed.
 - When `false` is set, the last image will be displayed permanently until reset or new scan.
 #### hideOnFinish: `false`
 When it set as `true`, after life of the last image, it will be hidden(blank) regardless of `rescanLoop`.
@@ -220,7 +220,7 @@ The module will call this callback at several major events happen. (`scanned`, `
 
 ## Notification
 ### Outgoing Notifications
-Nothing. Do you need? 
+Nothing. Do you need?
 
 If your other module wants to control from this module, send **`DBXP_SCAN`** with `callback` option. you can get the feedback in the callback functions.
 
@@ -300,4 +300,3 @@ In that case, use a simpler animation. (`fillBackground: false` also be recommen
 - Seongnoh Yi (eouia0819@gmail.com)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y56IFLK)
-

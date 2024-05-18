@@ -35,11 +35,11 @@ app.get('/auth', (req, res) => {
     dbx.auth.setRefreshToken(token.result.refresh_token)
     dbx.usersGetCurrentAccount()
     .then((response) => {
-      token.result.expires_at = Date.now() + token.result.expires_in * 1000 - 10000 // For the safe.  
+      token.result.expires_at = Date.now() + token.result.expires_in * 1000 - 10000 // For the safe.
       fs.writeFileSync('credentials.json', JSON.stringify(token.result, null, 2))
       const message = 'Successfully authenticated. You may now close the browser. Check credentials.json file.'
       console.log(message)
-      app.close()
+      //app.close()
       process.exit(0)
     })
     .catch((error) => {
