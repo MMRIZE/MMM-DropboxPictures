@@ -3,6 +3,13 @@
   "version": "3.0.0",
   "description": "MagicMirror module for showing images from Dropbox. (Successor of MMM-DropboxWallpaper)",
   "author": "eouia0819@gmail.com",
+  "keywords": [
+    "MagicMirror",
+    "Dropbox",
+    "Pictures",
+    "Wallpaper",
+    "Image"
+  ],
   "license": "MIT",
   "repository": "https://github.com/MMRIZE/MMM-DropboxPictures",
   "scripts": {
