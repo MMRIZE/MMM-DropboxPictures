@@ -1,8 +1,8 @@
-/* global Module Log config Mconfig */
-/* Magic Mirror
-* Module: MMM-DropboxPictures
-* v3.0.0
-*
+/* eslint-disable no-unused-vars */
+/* global Module Log config */
+
+
+/* MagicMirror² Module: MMM-DropboxPictures
 * By eouia
 */
 
