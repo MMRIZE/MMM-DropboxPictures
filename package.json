@@ -1,6 +1,6 @@
 {
   "name": "mmm-dropboxpictures",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "MagicMirror module for showing images from Dropbox. (Successor of MMM-DropboxWallpaper)",
   "author": "eouia0819@gmail.com",
   "keywords": [
