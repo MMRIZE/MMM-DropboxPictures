@@ -1,9 +1,27 @@
-import globals from "globals"
-import pluginJs from "@eslint/js"
+import css from "@eslint/css";
+import { defineConfig } from "eslint/config";
+import globals from "globals";
+import js from "@eslint/js";
+import markdown from "@eslint/markdown";
 
-
-export default [
-  {files: ["**/*.js"], languageOptions: {sourceType: "script"}},
-  {languageOptions: { globals: {...globals.browser, ...globals.node} }},
-  pluginJs.configs.recommended,
-]
+export default defineConfig([
+  {
+    files: ["**/*.css"],
+    plugins: { css },
+    language: "css/css",
+    extends: ["css/recommended"],
+    rules: { "css/no-invalid-properties": "off" }
+  },
+  { files: ["**/*.{js,mjs}"], plugins: { js }, extends: ["js/recommended"] },
+  { files: ["**/*.js"], languageOptions: { sourceType: "script" } },
+  {
+    files: ["**/*.{js,mjs}"],
+    languageOptions: { globals: { ...globals.browser, ...globals.node } }
+  },
+  {
+    files: ["**/*.md"],
+    plugins: { markdown },
+    language: "markdown/gfm",
+    extends: ["markdown/recommended"]
+  }
+]);

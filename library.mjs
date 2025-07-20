@@ -5,7 +5,6 @@ class ImageList {
   #images = []
   #serving = null
   #index = 0
-  #errors = 0
   constructor(options) {
     this.#options = options
     if (options.verbose) log = console.log
@@ -89,7 +88,7 @@ class ImageList {
   serve(serving) {
     return new Promise((resolve, reject) => {
       if (!serving) reject()
-      const { filePath, item, location, url, exif } = serving
+      const { url } = serving
       const img = document.createElement("img")
       img.src = url
       img.onload = () => {
