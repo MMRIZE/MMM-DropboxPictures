@@ -36,7 +36,7 @@
     "@eslint/js": "^10.0.1",
     "@eslint/markdown": "^8.0.2",
     "commit-and-tag-version": "^12.7.3",
-    "eslint": "^10.6.0",
+    "eslint": "^10.8.0",
     "express": "^5.2.1",
     "globals": "^17.7.0",
     "open": "^11.0.0",
